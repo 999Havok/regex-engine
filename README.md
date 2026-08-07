@@ -2,7 +2,7 @@
 
 A small regular-expression engine written from scratch in C99, with **no
 backtracking**: a pattern is compiled directly into a minimised DFA, so
-matching runs in worst-case time linear in the length of the input — a
+matching runs in worst-case time linear in the length of the input - a
 pathological pattern like `(a+)+b` that makes backtracking engines explode
 resolves in microseconds here.
 
@@ -29,7 +29,7 @@ The only dependency is libc.
 A regular expression describes a *regular language*, and every regular language
 is recognised by a **deterministic finite automaton** (DFA): a fixed set of
 states, and from each state exactly one transition per input byte. Matching with
-a DFA is then trivial — start in the start state, follow one transition per input
+a DFA is then trivial - start in the start state, follow one transition per input
 byte, and check whether you end in an accepting state. That is one array lookup
 per byte, no matter how the pattern is shaped, so matching is **O(length of
 input)** and cannot backtrack.
@@ -85,9 +85,9 @@ CONCAT
 
 **2. Compute `nullable`, `firstpos`, `lastpos` for every node.**
 
-- `nullable(n)` — can this subexpression match the empty string?
-- `firstpos(n)` — which positions can be the *first* symbol matched?
-- `lastpos(n)` — which positions can be the *last* symbol matched?
+- `nullable(n)` - can this subexpression match the empty string?
+- `firstpos(n)` - which positions can be the *first* symbol matched?
+- `lastpos(n)` - which positions can be the *last* symbol matched?
 
 ```
 node     kind     nullable  firstpos    lastpos
