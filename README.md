@@ -21,6 +21,7 @@ The only dependency is libc.
 - [What is deliberately not supported, and why](#what-is-deliberately-not-supported-and-why)
 - [Project layout](#project-layout)
 - [Limitations and honesty](#limitations-and-honesty)
+- [License](#license)
 
 ---
 
@@ -343,6 +344,7 @@ positions. Here position sets are a heap-allocated array of 64-bit words
 (`src/bitset.c`), so pattern size is bounded only by memory.
 
 ## Limitations and honesty
+- [License](#license)
 
 - **Search is O(n·L), not O(n).** `regex_search` finds a leftmost-longest match
   by trying each start position, where `L` is the match length at that start.
@@ -363,3 +365,7 @@ positions. Here position sets are a heap-allocated array of 64-bit words
   `make memcheck` falls back to AddressSanitizer + UBSan (memory errors) plus
   the macOS `leaks` tool (leak detection). The suite reports zero leaks and zero
   errors under both that fallback and valgrind on Linux.
+
+## License
+
+This project is licensed under the MIT License. See [LICENSE](LICENSE).
